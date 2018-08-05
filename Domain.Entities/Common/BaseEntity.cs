@@ -8,5 +8,6 @@ namespace Domain.Entities.Common
     {
         public int Id { get; set; }
         public DateTime CreationDate { get; set; } = DateTime.Now;
+        public bool Deleted { get; set; } = false;
     }
 }
