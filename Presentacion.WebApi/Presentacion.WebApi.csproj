@@ -21,6 +21,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Domain.Entities\Domain.Entities.csproj" />
     <ProjectReference Include="..\Infraestructure.Context\Infraestructure.Context.csproj" />
+    <ProjectReference Include="..\Infraestructure.Mapping\Infraestructure.Mapping.csproj" />
     <ProjectReference Include="..\Services.Implementation\Services.Implementation.csproj" />
     <ProjectReference Include="..\Services.Interfaces\Services.Interfaces.csproj" />
   </ItemGroup>

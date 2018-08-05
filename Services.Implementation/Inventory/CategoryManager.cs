@@ -1,5 +1,6 @@
 ﻿using Domain.Entities.Inventory;
 using Infraestructure.Context.Inventory;
+using Infraestructure.Mapping.Inventory.CategoryMapping;
 using Microsoft.EntityFrameworkCore;
 using Services.Interfaces.Common;
 using Services.Interfaces.Inventory.CategoryManagement;
@@ -19,19 +20,10 @@ namespace Services.Implementation.Inventory
         {
             using (InventoryDB db = new InventoryDB())
             {
-                Category category = new Category()
-                {
-                    Name = newRegistry.Name,
-                    Description = newRegistry.Description
-                };
+                Category category = newRegistry.ToEntity();
                 db.Categories.Add(category);
                 await db.SaveChangesAsync();
-                return new GeneralCategory()
-                {
-                    Id = category.Id,
-                    Name = category.Name,
-                    Description = category.Description
-                };
+                return category.ToDTO();
             }
         }
 
@@ -44,15 +36,11 @@ namespace Services.Implementation.Inventory
         {
             using (InventoryDB db = new InventoryDB())
             {
-                return await db.Categories.Where(x => x.Deleted == false)
-                         .Skip(page.Number*page.Size)
+                var entities = await db.Categories.Where(x => x.Deleted == false)
+                         .Skip(page.Number * page.Size)
                          .Take(page.Size)
-                         .Select(x => new GeneralCategory()
-                         {
-                             Id = x.Id,
-                             Name = x.Name,
-                             Description = x.Description
-                         }).ToListAsync();
+                         .ToListAsync();
+                return entities.Select(x => x.ToDTO()).ToList();
             }
         }
 
