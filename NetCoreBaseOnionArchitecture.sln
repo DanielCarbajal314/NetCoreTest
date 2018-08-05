@@ -23,7 +23,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Services.Implementation", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Presentacion.WebApi", "Presentacion.WebApi\Presentacion.WebApi.csproj", "{5305C463-2AA2-4C0E-AA99-A06389EAE83D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infraestructure.Mapping", "Infraestructure.Mapping\Infraestructure.Mapping.csproj", "{47CD5F42-EBDC-4B4E-980A-C13FDDB08ABF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infraestructure.Mapping", "Infraestructure.Mapping\Infraestructure.Mapping.csproj", "{47CD5F42-EBDC-4B4E-980A-C13FDDB08ABF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

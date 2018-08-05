@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Services.Implementation.Inventory
+namespace Infraestructure.Mapping.Inventory.CategoryMapping
 {
     public static class CategoryDtoToEntity
     {
